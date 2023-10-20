@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Hello World!</h1>
+
+  <a routerLink="/productinsert">
+    add new product
+  </a>
+
+
+  <table border="2" style="width: 100%;">
+    <tr>
+      <th>Cname</th>
+      <th>Pname</th>
+      <th>Price</th>
+      <th>qty</th>
+      <th>desc</th>
+      <th>img</th>
+      <!-- Add more table headers as needed -->
+    </tr>
+    <tr *ngFor="let item of data">
+      <td>{{ item.cname }}</td>
+      <td>{{ item.pname }}</td>
+      <td>{{ item.pprice }}</td>
+      <td>{{ item.pqty }}</td>
+      <td>{{ item.pdesc }}</td>
+      <td>{{ item.pimg }}</td>
+      <!-- Display other data fields as needed -->
+    </tr>
+  </table>
+
+</body>
+
+</html>
+<router-outlet></router-outlet>

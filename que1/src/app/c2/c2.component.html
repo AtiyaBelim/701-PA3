@@ -1,0 +1,62 @@
+<p>c2 works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form (ngSubmit)="onSubmit()">
+        Fisrt Name: <input type="text" name="fname" id="" [(ngModel)]="data.fname"><br><br>
+        Last Name: <input type="text" name="lname" id="" [(ngModel)]="data.lname"><br><br>
+        Address: <textarea name="address" id="" cols="30" rows="6" [(ngModel)]="data.address"></textarea><br><br>
+        City: <select name="city" id="" [(ngModel)]="data.city">
+            <option value="select" disabled>Select City</option>
+            <option value="Surat">Surat</option>
+            <option value="Valsad">Valsad</option>
+            <option value="Vadodara">Vadodara</option>
+        </select> <br><br>
+        Gender: <input type="radio" name="gender" id="" value="Male" [(ngModel)]="data.gender">Male
+        <input type="radio" name="gender" id="" value="Female" [(ngModel)]="data.gender">Female<br><br>
+        Hobbies: <input type="checkbox" name="hobby" value="singing" [(ngModel)]="data.hobby.singing">Singing
+        <input type="checkbox" name="hobby" value="travelling" [(ngModel)]="data.hobby.travelling">Travelling
+        <input type="checkbox" name="hobby" value="dancing" [(ngModel)]="data.hobby.dancing">Dancing
+        <input type="checkbox" name="hobby" value="reading" [(ngModel)]="data.hobby.reading">Reading<br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+
+    <div *ngIf="submit">
+        <h2>User Details</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Fisrt Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Hobbies</th>
+            </tr>
+            <tr>
+                <td>{{data.fname}}</td>
+                <td>{{data.lname}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.gender}}</td>
+                <td>
+                    <span *ngIf="data.hobby.singing">Singing,</span>
+                    <span *ngIf="data.hobby.travelling">&nbsp;Travelling,</span>
+                    <span *ngIf="data.hobby.dancing">Dancing,</span>
+                    <span *ngIf="data.hobby.reading">Reading</span>
+
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+</html>

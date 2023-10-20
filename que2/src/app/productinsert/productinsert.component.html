@@ -1,0 +1,36 @@
+<!-- <p>productinsert works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="display: flex;
+    justify-content: center; 
+    align-items: center; ">ADD PRODUCT</h2>
+    <div style="display: flex;
+    justify-content: center; 
+    align-items: center; ">
+        <br>
+
+        <form method="post" action="/insert" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+            Name:<input type="text" [(ngModel)]="prdData.pname" name="pname" /> <br><br>
+            Category:<select [(ngModel)]="prdData.cname" name="cname">
+                <option>Select Category</option>
+                <option *ngFor="let c of category">{{c.cname}}</option>
+            </select><br><br>
+            Price:<input type="number" [(ngModel)]="prdData.pprice" name="price" /> <br><br>
+            Qnty:<input type="number" [(ngModel)]="prdData.pqty" name="qtny" /> <br><br>
+
+            Desc:<input type="text" [(ngModel)]="prdData.pdesc" name="pdesc" /> <br><br>
+            Image:<input type="file" [(ngModel)]="prdData.pimg" name="pimg" (change)="onFileSelect($event)" /> <br><br>
+            <input type="submit" value="Insert">
+        </form>
+    </div>
+</body>
+
+</html>
